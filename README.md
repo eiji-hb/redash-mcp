@@ -13,7 +13,7 @@ MCP (Model Context Protocol) server for Redash API integration.
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/redash-mcp.git
+git clone https://github.com/eiji-hb/redash-mcp.git
 cd redash-mcp
 
 # Install dependencies
