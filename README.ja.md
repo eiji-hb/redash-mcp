@@ -68,6 +68,7 @@ uv run redash-mcp
 
 ### クエリ
 - `list_queries` - Redashに保存されているSQLクエリの一覧を取得
+- `get_query` - 指定したIDのクエリ詳細を取得
 
 ## ライセンス
 
