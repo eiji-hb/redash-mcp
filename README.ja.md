@@ -13,7 +13,7 @@ Redash API連携用のMCP (Model Context Protocol) サーバー
 
 ```bash
 # リポジトリをクローン
-git clone https://github.com/your-username/redash-mcp.git
+git clone https://github.com/eiji-hb/redash-mcp.git
 cd redash-mcp
 
 # 依存関係をインストール
