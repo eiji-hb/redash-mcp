@@ -4,13 +4,14 @@ from typing import Any
 
 from mcp.types import TextContent, Tool
 
+from .get_query import get_tool as get_query_tool
+from .get_query import handle as get_query_handle
 from .list_queries import get_tool as list_queries_tool
 from .list_queries import handle as list_queries_handle
 
-# ツール名とハンドラのマッピング
 TOOL_HANDLERS = {
     "list_queries": list_queries_handle,
-    # 追加時: "get_query": get_query_handle,
+    "get_query": get_query_handle,
 }
 
 
@@ -18,7 +19,7 @@ def get_all_tools() -> list[Tool]:
     """Get all available MCP tools."""
     return [
         list_queries_tool(),
-        # 追加時: get_query_tool(),
+        get_query_tool(),
     ]
 
 
