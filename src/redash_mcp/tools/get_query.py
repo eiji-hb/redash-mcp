@@ -10,7 +10,7 @@ def get_tool() -> Tool:
     """Get get_query tool definition."""
     return Tool(
         name="get_query",
-        description="Get details of a specific query by ID.",
+        description="Get details of a specific query by ID. Returns query SQL, name, schedule, and metadata.",
         inputSchema={
             "type": "object",
             "properties": {
