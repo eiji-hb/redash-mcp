@@ -74,6 +74,7 @@ uv run redash-mcp
 - `archive_query` - クエリをアーカイブ（ソフト削除）
 - `get_query_result` - クエリのキャッシュ結果を取得（パラメータなしクエリのみ）
 - `execute_query` - クエリを実行（パラメータ付きクエリ・キャッシュ制御対応）
+- `get_query_result_by_id` - 結果IDでクエリ結果を取得
 
 ## ライセンス
 

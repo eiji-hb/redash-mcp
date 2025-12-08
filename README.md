@@ -74,6 +74,7 @@ uv run redash-mcp
 - `archive_query` - Archive (soft delete) a query
 - `get_query_result` - Get cached result for a query (non-parameterized only)
 - `execute_query` - Execute a query (supports parameterized queries and cache control)
+- `get_query_result_by_id` - Get a query result by result ID
 
 ## License
 
