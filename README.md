@@ -72,6 +72,7 @@ uv run redash-mcp
 - `create_query` - Create a new SQL query
 - `update_query` - Update an existing query
 - `archive_query` - Archive (soft delete) a query
+- `get_query_result` - Get cached result for a query (non-parameterized only)
 
 ## License
 

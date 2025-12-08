@@ -10,6 +10,8 @@ from .create_query import get_tool as create_query_tool
 from .create_query import handle as create_query_handle
 from .get_query import get_tool as get_query_tool
 from .get_query import handle as get_query_handle
+from .get_query_result import get_tool as get_query_result_tool
+from .get_query_result import handle as get_query_result_handle
 from .list_queries import get_tool as list_queries_tool
 from .list_queries import handle as list_queries_handle
 from .update_query import get_tool as update_query_tool
@@ -21,6 +23,7 @@ TOOL_HANDLERS = {
     "create_query": create_query_handle,
     "update_query": update_query_handle,
     "archive_query": archive_query_handle,
+    "get_query_result": get_query_result_handle,
 }
 
 
@@ -32,6 +35,7 @@ def get_all_tools() -> list[Tool]:
         create_query_tool(),
         update_query_tool(),
         archive_query_tool(),
+        get_query_result_tool(),
     ]
 
 
