@@ -10,12 +10,18 @@ from .archive_query import get_tool as archive_query_tool
 from .archive_query import handle as archive_query_handle
 from .create_dashboard import get_tool as create_dashboard_tool
 from .create_dashboard import handle as create_dashboard_handle
+from .create_data_source import get_tool as create_data_source_tool
+from .create_data_source import handle as create_data_source_handle
 from .create_query import get_tool as create_query_tool
 from .create_query import handle as create_query_handle
+from .delete_data_source import get_tool as delete_data_source_tool
+from .delete_data_source import handle as delete_data_source_handle
 from .execute_query import get_tool as execute_query_tool
 from .execute_query import handle as execute_query_handle
 from .get_dashboard import get_tool as get_dashboard_tool
 from .get_dashboard import handle as get_dashboard_handle
+from .get_data_source import get_tool as get_data_source_tool
+from .get_data_source import handle as get_data_source_handle
 from .get_job import get_tool as get_job_tool
 from .get_job import handle as get_job_handle
 from .get_query import get_tool as get_query_tool
@@ -26,10 +32,14 @@ from .get_query_result_by_id import get_tool as get_query_result_by_id_tool
 from .get_query_result_by_id import handle as get_query_result_by_id_handle
 from .list_dashboards import get_tool as list_dashboards_tool
 from .list_dashboards import handle as list_dashboards_handle
+from .list_data_sources import get_tool as list_data_sources_tool
+from .list_data_sources import handle as list_data_sources_handle
 from .list_queries import get_tool as list_queries_tool
 from .list_queries import handle as list_queries_handle
 from .update_dashboard import get_tool as update_dashboard_tool
 from .update_dashboard import handle as update_dashboard_handle
+from .update_data_source import get_tool as update_data_source_tool
+from .update_data_source import handle as update_data_source_handle
 from .update_query import get_tool as update_query_tool
 from .update_query import handle as update_query_handle
 
@@ -48,6 +58,11 @@ TOOL_HANDLERS = {
     "create_dashboard": create_dashboard_handle,
     "update_dashboard": update_dashboard_handle,
     "archive_dashboard": archive_dashboard_handle,
+    "list_data_sources": list_data_sources_handle,
+    "get_data_source": get_data_source_handle,
+    "create_data_source": create_data_source_handle,
+    "update_data_source": update_data_source_handle,
+    "delete_data_source": delete_data_source_handle,
 }
 
 
@@ -68,6 +83,11 @@ def get_all_tools() -> list[Tool]:
         create_dashboard_tool(),
         update_dashboard_tool(),
         archive_dashboard_tool(),
+        list_data_sources_tool(),
+        get_data_source_tool(),
+        create_data_source_tool(),
+        update_data_source_tool(),
+        delete_data_source_tool(),
     ]
 
 

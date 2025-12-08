@@ -5,16 +5,21 @@ from typing import Any
 from .archive_dashboard import ArchiveDashboardClient
 from .archive_query import ArchiveQueryClient
 from .create_dashboard import CreateDashboardClient
+from .create_data_source import CreateDataSourceClient
 from .create_query import CreateQueryClient
+from .delete_data_source import DeleteDataSourceClient
 from .execute_query import ExecuteQueryClient
 from .get_dashboard import GetDashboardClient
+from .get_data_source import GetDataSourceClient
 from .get_job import GetJobClient
 from .get_query import GetQueryClient
 from .get_query_result import GetQueryResultClient
 from .get_query_result_by_id import GetQueryResultByIdClient
 from .list_dashboards import ListDashboardsClient
+from .list_data_sources import ListDataSourcesClient
 from .list_queries import ListQueriesClient
 from .update_dashboard import UpdateDashboardClient
+from .update_data_source import UpdateDataSourceClient
 from .update_query import UpdateQueryClient
 
 _clients: dict[str, Any] = {}
@@ -62,4 +67,14 @@ def get_client_for_tool(name: str, base_url: str, api_key: str, timeout: float) 
                 _clients[name] = UpdateDashboardClient(base_url, api_key, timeout)
             case "archive_dashboard":
                 _clients[name] = ArchiveDashboardClient(base_url, api_key, timeout)
+            case "list_data_sources":
+                _clients[name] = ListDataSourcesClient(base_url, api_key, timeout)
+            case "get_data_source":
+                _clients[name] = GetDataSourceClient(base_url, api_key, timeout)
+            case "create_data_source":
+                _clients[name] = CreateDataSourceClient(base_url, api_key, timeout)
+            case "update_data_source":
+                _clients[name] = UpdateDataSourceClient(base_url, api_key, timeout)
+            case "delete_data_source":
+                _clients[name] = DeleteDataSourceClient(base_url, api_key, timeout)
     return _clients.get(name)

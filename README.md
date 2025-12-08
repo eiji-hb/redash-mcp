@@ -86,6 +86,13 @@ uv run redash-mcp
 - `update_dashboard` - Update an existing dashboard
 - `archive_dashboard` - Archive (soft delete) a dashboard
 
+### Data Sources
+- `list_data_sources` - List all data sources in Redash
+- `get_data_source` - Get a data source by its ID
+- `create_data_source` - Create a new data source
+- `update_data_source` - Update an existing data source
+- `delete_data_source` - Delete a data source
+
 ## License
 
 MIT

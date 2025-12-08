@@ -86,6 +86,13 @@ uv run redash-mcp
 - `update_dashboard` - 既存のダッシュボードを更新
 - `archive_dashboard` - ダッシュボードをアーカイブ（ソフト削除）
 
+### データソース
+- `list_data_sources` - Redashのデータソース一覧を取得
+- `get_data_source` - IDでデータソースを取得
+- `create_data_source` - 新しいデータソースを作成
+- `update_data_source` - 既存のデータソースを更新
+- `delete_data_source` - データソースを削除
+
 ## ライセンス
 
 MIT
