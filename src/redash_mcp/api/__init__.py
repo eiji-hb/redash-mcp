@@ -11,13 +11,16 @@ from .delete_data_source import DeleteDataSourceClient
 from .execute_query import ExecuteQueryClient
 from .get_dashboard import GetDashboardClient
 from .get_data_source import GetDataSourceClient
+from .get_data_source_schema import GetDataSourceSchemaClient
 from .get_job import GetJobClient
 from .get_query import GetQueryClient
 from .get_query_result import GetQueryResultClient
 from .get_query_result_by_id import GetQueryResultByIdClient
 from .list_dashboards import ListDashboardsClient
+from .list_data_source_types import ListDataSourceTypesClient
 from .list_data_sources import ListDataSourcesClient
 from .list_queries import ListQueriesClient
+from .test_data_source import TestDataSourceClient
 from .update_dashboard import UpdateDashboardClient
 from .update_data_source import UpdateDataSourceClient
 from .update_query import UpdateQueryClient
@@ -77,4 +80,10 @@ def get_client_for_tool(name: str, base_url: str, api_key: str, timeout: float) 
                 _clients[name] = UpdateDataSourceClient(base_url, api_key, timeout)
             case "delete_data_source":
                 _clients[name] = DeleteDataSourceClient(base_url, api_key, timeout)
+            case "get_data_source_schema":
+                _clients[name] = GetDataSourceSchemaClient(base_url, api_key, timeout)
+            case "test_data_source":
+                _clients[name] = TestDataSourceClient(base_url, api_key, timeout)
+            case "list_data_source_types":
+                _clients[name] = ListDataSourceTypesClient(base_url, api_key, timeout)
     return _clients.get(name)

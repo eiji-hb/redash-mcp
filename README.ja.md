@@ -92,6 +92,9 @@ uv run redash-mcp
 - `create_data_source` - 新しいデータソースを作成
 - `update_data_source` - 既存のデータソースを更新
 - `delete_data_source` - データソースを削除
+- `get_data_source_schema` - データソースのスキーマ（テーブル・カラム情報）を取得
+- `test_data_source` - データソースへの接続テスト
+- `list_data_source_types` - 利用可能なデータソースタイプの一覧を取得
 
 ## ライセンス
 

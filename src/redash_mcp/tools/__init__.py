@@ -22,6 +22,8 @@ from .get_dashboard import get_tool as get_dashboard_tool
 from .get_dashboard import handle as get_dashboard_handle
 from .get_data_source import get_tool as get_data_source_tool
 from .get_data_source import handle as get_data_source_handle
+from .get_data_source_schema import get_tool as get_data_source_schema_tool
+from .get_data_source_schema import handle as get_data_source_schema_handle
 from .get_job import get_tool as get_job_tool
 from .get_job import handle as get_job_handle
 from .get_query import get_tool as get_query_tool
@@ -32,10 +34,14 @@ from .get_query_result_by_id import get_tool as get_query_result_by_id_tool
 from .get_query_result_by_id import handle as get_query_result_by_id_handle
 from .list_dashboards import get_tool as list_dashboards_tool
 from .list_dashboards import handle as list_dashboards_handle
+from .list_data_source_types import get_tool as list_data_source_types_tool
+from .list_data_source_types import handle as list_data_source_types_handle
 from .list_data_sources import get_tool as list_data_sources_tool
 from .list_data_sources import handle as list_data_sources_handle
 from .list_queries import get_tool as list_queries_tool
 from .list_queries import handle as list_queries_handle
+from .test_data_source import get_tool as test_data_source_tool
+from .test_data_source import handle as test_data_source_handle
 from .update_dashboard import get_tool as update_dashboard_tool
 from .update_dashboard import handle as update_dashboard_handle
 from .update_data_source import get_tool as update_data_source_tool
@@ -63,6 +69,9 @@ TOOL_HANDLERS = {
     "create_data_source": create_data_source_handle,
     "update_data_source": update_data_source_handle,
     "delete_data_source": delete_data_source_handle,
+    "get_data_source_schema": get_data_source_schema_handle,
+    "test_data_source": test_data_source_handle,
+    "list_data_source_types": list_data_source_types_handle,
 }
 
 
@@ -88,6 +97,9 @@ def get_all_tools() -> list[Tool]:
         create_data_source_tool(),
         update_data_source_tool(),
         delete_data_source_tool(),
+        get_data_source_schema_tool(),
+        test_data_source_tool(),
+        list_data_source_types_tool(),
     ]
 
 

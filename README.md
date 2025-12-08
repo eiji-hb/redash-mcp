@@ -92,6 +92,9 @@ uv run redash-mcp
 - `create_data_source` - Create a new data source
 - `update_data_source` - Update an existing data source
 - `delete_data_source` - Delete a data source
+- `get_data_source_schema` - Get schema (tables and columns) for a data source
+- `test_data_source` - Test connection to a data source
+- `list_data_source_types` - List available data source types
 
 ## License
 
