@@ -79,6 +79,13 @@ uv run redash-mcp
 ### ジョブ
 - `get_job` - ジョブのステータスを取得（1=PENDING, 2=STARTED, 3=SUCCESS, 4=FAILURE, 5=CANCELLED）
 
+### ダッシュボード
+- `list_dashboards` - Redashのダッシュボード一覧を取得
+- `get_dashboard` - スラッグでダッシュボードを取得
+- `create_dashboard` - 新しいダッシュボードを作成
+- `update_dashboard` - 既存のダッシュボードを更新
+- `archive_dashboard` - ダッシュボードをアーカイブ（ソフト削除）
+
 ## ライセンス
 
 MIT

@@ -79,6 +79,13 @@ uv run redash-mcp
 ### Jobs
 - `get_job` - Get job status (1=PENDING, 2=STARTED, 3=SUCCESS, 4=FAILURE, 5=CANCELLED)
 
+### Dashboards
+- `list_dashboards` - List all dashboards in Redash
+- `get_dashboard` - Get a dashboard by its slug
+- `create_dashboard` - Create a new dashboard
+- `update_dashboard` - Update an existing dashboard
+- `archive_dashboard` - Archive (soft delete) a dashboard
+
 ## License
 
 MIT
