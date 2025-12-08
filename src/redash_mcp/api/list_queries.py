@@ -37,8 +37,6 @@ class ListQueriesClient:
         Returns:
             List of queries with pagination info
         """
-        response = await self._client.get(
-            "/api/queries", params={"page": page, "page_size": page_size}
-        )
+        response = await self._client.get("/api/queries", params={"page": page, "page_size": page_size})
         response.raise_for_status()
         return response.json()
