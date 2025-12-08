@@ -1,4 +1,4 @@
-"""MCP tool for get_query."""
+"""MCP tool for get_query_result."""
 
 import json
 from typing import Any
@@ -7,16 +7,16 @@ from mcp.types import TextContent, Tool
 
 
 def get_tool() -> Tool:
-    """Get get_query tool definition."""
+    """Get get_query_result tool definition."""
     return Tool(
-        name="get_query",
-        description="Get details of a specific query by ID. Returns query SQL, name, schedule, and metadata.",
+        name="get_query_result",
+        description="Get cached result for a query. Only works for non-parameterized queries.",
         inputSchema={
             "type": "object",
             "properties": {
                 "query_id": {
                     "type": "integer",
-                    "description": "The ID of the query to retrieve",
+                    "description": "ID of the query to get results for",
                 },
             },
             "required": ["query_id"],
@@ -25,15 +25,7 @@ def get_tool() -> Tool:
 
 
 async def handle(client: Any, arguments: dict[str, Any]) -> list[TextContent]:
-    """Handle get_query tool call.
-
-    Args:
-        client: API client instance
-        arguments: Tool arguments
-
-    Returns:
-        List of TextContent with results
-    """
+    """Handle get_query_result tool call."""
     try:
         query_id = arguments.get("query_id")
         if query_id is None:
@@ -43,4 +35,4 @@ async def handle(client: Any, arguments: dict[str, Any]) -> list[TextContent]:
         return [TextContent(type="text", text=json.dumps(result, indent=2, ensure_ascii=False))]
 
     except Exception as e:
-        return [TextContent(type="text", text=f"Error: {str(e)}")]
+        return [TextContent(type="text", text=f"Error: {e!s}")]

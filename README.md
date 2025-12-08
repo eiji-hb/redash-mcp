@@ -69,6 +69,22 @@ uv run redash-mcp
 ### Queries
 - `list_queries` - List all saved SQL queries in Redash
 - `get_query` - Get details of a specific query by ID
+- `create_query` - Create a new SQL query
+- `update_query` - Update an existing query
+- `archive_query` - Archive (soft delete) a query
+- `get_query_result` - Get cached result for a query (non-parameterized only)
+- `execute_query` - Execute a query (supports parameterized queries and cache control)
+- `get_query_result_by_id` - Get a query result by result ID
+
+### Jobs
+- `get_job` - Get job status (1=PENDING, 2=STARTED, 3=SUCCESS, 4=FAILURE, 5=CANCELLED)
+
+### Dashboards
+- `list_dashboards` - List all dashboards in Redash
+- `get_dashboard` - Get a dashboard by its slug
+- `create_dashboard` - Create a new dashboard
+- `update_dashboard` - Update an existing dashboard
+- `archive_dashboard` - Archive (soft delete) a dashboard
 
 ## License
 

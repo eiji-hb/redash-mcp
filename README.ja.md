@@ -69,6 +69,22 @@ uv run redash-mcp
 ### クエリ
 - `list_queries` - Redashに保存されているSQLクエリの一覧を取得
 - `get_query` - 指定したIDのクエリ詳細を取得
+- `create_query` - 新しいSQLクエリを作成
+- `update_query` - 既存のクエリを更新
+- `archive_query` - クエリをアーカイブ（ソフト削除）
+- `get_query_result` - クエリのキャッシュ結果を取得（パラメータなしクエリのみ）
+- `execute_query` - クエリを実行（パラメータ付きクエリ・キャッシュ制御対応）
+- `get_query_result_by_id` - 結果IDでクエリ結果を取得
+
+### ジョブ
+- `get_job` - ジョブのステータスを取得（1=PENDING, 2=STARTED, 3=SUCCESS, 4=FAILURE, 5=CANCELLED）
+
+### ダッシュボード
+- `list_dashboards` - Redashのダッシュボード一覧を取得
+- `get_dashboard` - スラッグでダッシュボードを取得
+- `create_dashboard` - 新しいダッシュボードを作成
+- `update_dashboard` - 既存のダッシュボードを更新
+- `archive_dashboard` - ダッシュボードをアーカイブ（ソフト削除）
 
 ## ライセンス
 
