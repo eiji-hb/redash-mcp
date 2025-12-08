@@ -71,6 +71,7 @@ uv run redash-mcp
 - `get_query` - 指定したIDのクエリ詳細を取得
 - `create_query` - 新しいSQLクエリを作成
 - `update_query` - 既存のクエリを更新
+- `archive_query` - クエリをアーカイブ（ソフト削除）
 
 ## ライセンス
 

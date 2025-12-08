@@ -71,6 +71,7 @@ uv run redash-mcp
 - `get_query` - Get details of a specific query by ID
 - `create_query` - Create a new SQL query
 - `update_query` - Update an existing query
+- `archive_query` - Archive (soft delete) a query
 
 ## License
 

@@ -2,6 +2,7 @@
 
 from typing import Any
 
+from .archive_query import ArchiveQueryClient
 from .create_query import CreateQueryClient
 from .get_query import GetQueryClient
 from .list_queries import ListQueriesClient
@@ -32,4 +33,6 @@ def get_client_for_tool(name: str, base_url: str, api_key: str, timeout: float) 
                 _clients[name] = CreateQueryClient(base_url, api_key, timeout)
             case "update_query":
                 _clients[name] = UpdateQueryClient(base_url, api_key, timeout)
+            case "archive_query":
+                _clients[name] = ArchiveQueryClient(base_url, api_key, timeout)
     return _clients.get(name)

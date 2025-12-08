@@ -4,6 +4,8 @@ from typing import Any
 
 from mcp.types import TextContent, Tool
 
+from .archive_query import get_tool as archive_query_tool
+from .archive_query import handle as archive_query_handle
 from .create_query import get_tool as create_query_tool
 from .create_query import handle as create_query_handle
 from .get_query import get_tool as get_query_tool
@@ -18,6 +20,7 @@ TOOL_HANDLERS = {
     "get_query": get_query_handle,
     "create_query": create_query_handle,
     "update_query": update_query_handle,
+    "archive_query": archive_query_handle,
 }
 
 
@@ -28,6 +31,7 @@ def get_all_tools() -> list[Tool]:
         get_query_tool(),
         create_query_tool(),
         update_query_tool(),
+        archive_query_tool(),
     ]
 
 
