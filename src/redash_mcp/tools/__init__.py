@@ -10,6 +10,8 @@ from .create_query import get_tool as create_query_tool
 from .create_query import handle as create_query_handle
 from .execute_query import get_tool as execute_query_tool
 from .execute_query import handle as execute_query_handle
+from .get_job import get_tool as get_job_tool
+from .get_job import handle as get_job_handle
 from .get_query import get_tool as get_query_tool
 from .get_query import handle as get_query_handle
 from .get_query_result import get_tool as get_query_result_tool
@@ -30,6 +32,7 @@ TOOL_HANDLERS = {
     "get_query_result": get_query_result_handle,
     "execute_query": execute_query_handle,
     "get_query_result_by_id": get_query_result_by_id_handle,
+    "get_job": get_job_handle,
 }
 
 
@@ -44,6 +47,7 @@ def get_all_tools() -> list[Tool]:
         get_query_result_tool(),
         execute_query_tool(),
         get_query_result_by_id_tool(),
+        get_job_tool(),
     ]
 
 

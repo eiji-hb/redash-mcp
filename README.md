@@ -76,6 +76,9 @@ uv run redash-mcp
 - `execute_query` - Execute a query (supports parameterized queries and cache control)
 - `get_query_result_by_id` - Get a query result by result ID
 
+### Jobs
+- `get_job` - Get job status (1=PENDING, 2=STARTED, 3=SUCCESS, 4=FAILURE, 5=CANCELLED)
+
 ## License
 
 MIT

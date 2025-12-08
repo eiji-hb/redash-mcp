@@ -5,6 +5,7 @@ from typing import Any
 from .archive_query import ArchiveQueryClient
 from .create_query import CreateQueryClient
 from .execute_query import ExecuteQueryClient
+from .get_job import GetJobClient
 from .get_query import GetQueryClient
 from .get_query_result import GetQueryResultClient
 from .get_query_result_by_id import GetQueryResultByIdClient
@@ -44,4 +45,6 @@ def get_client_for_tool(name: str, base_url: str, api_key: str, timeout: float) 
                 _clients[name] = ExecuteQueryClient(base_url, api_key, timeout)
             case "get_query_result_by_id":
                 _clients[name] = GetQueryResultByIdClient(base_url, api_key, timeout)
+            case "get_job":
+                _clients[name] = GetJobClient(base_url, api_key, timeout)
     return _clients.get(name)

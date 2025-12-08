@@ -76,6 +76,9 @@ uv run redash-mcp
 - `execute_query` - クエリを実行（パラメータ付きクエリ・キャッシュ制御対応）
 - `get_query_result_by_id` - 結果IDでクエリ結果を取得
 
+### ジョブ
+- `get_job` - ジョブのステータスを取得（1=PENDING, 2=STARTED, 3=SUCCESS, 4=FAILURE, 5=CANCELLED）
+
 ## ライセンス
 
 MIT
