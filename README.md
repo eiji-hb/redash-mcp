@@ -70,6 +70,7 @@ uv run redash-mcp
 - `list_queries` - List all saved SQL queries in Redash
 - `get_query` - Get details of a specific query by ID
 - `create_query` - Create a new SQL query
+- `update_query` - Update an existing query
 
 ## License
 

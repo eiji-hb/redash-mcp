@@ -70,6 +70,7 @@ uv run redash-mcp
 - `list_queries` - Redashに保存されているSQLクエリの一覧を取得
 - `get_query` - 指定したIDのクエリ詳細を取得
 - `create_query` - 新しいSQLクエリを作成
+- `update_query` - 既存のクエリを更新
 
 ## ライセンス
 
