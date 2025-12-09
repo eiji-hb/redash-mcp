@@ -8,12 +8,13 @@ import httpx
 class ExecuteQueryClient:
     """Client for execute_query API."""
 
-    def __init__(self, base_url: str, api_key: str, timeout: float = 30.0) -> None:
+    def __init__(self, base_url: str, api_key: str, timeout: float = 30.0, verify_ssl: bool = True) -> None:
         self.base_url = base_url.rstrip("/")
         self._client = httpx.AsyncClient(
             base_url=self.base_url,
             headers={"Authorization": f"Key {api_key}"},
             timeout=timeout,
+            verify=verify_ssl,
         )
 
     async def close(self) -> None:

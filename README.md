@@ -29,6 +29,7 @@ Set the following environment variables:
 | `REDASH_URL` | Yes | - | Redash instance URL |
 | `REDASH_API_KEY` | Yes | - | Redash API key |
 | `REDASH_TIMEOUT` | No | 30000 | Request timeout in milliseconds |
+| `REDASH_VERIFY_SSL` | No | true | Verify SSL certificates (set to `false` for self-signed certs) |
 
 ## Usage
 

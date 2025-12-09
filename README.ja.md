@@ -29,6 +29,7 @@ uv sync
 | `REDASH_URL` | Yes | - | RedashインスタンスのURL |
 | `REDASH_API_KEY` | Yes | - | Redash APIキー |
 | `REDASH_TIMEOUT` | No | 30000 | リクエストタイムアウト（ミリ秒） |
+| `REDASH_VERIFY_SSL` | No | true | SSL証明書の検証（自己署名証明書の場合は`false`に設定） |
 
 ## 使い方
 

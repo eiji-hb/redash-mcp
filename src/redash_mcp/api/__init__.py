@@ -28,7 +28,7 @@ from .update_query import UpdateQueryClient
 _clients: dict[str, Any] = {}
 
 
-def get_client_for_tool(name: str, base_url: str, api_key: str, timeout: float) -> Any:
+def get_client_for_tool(name: str, base_url: str, api_key: str, timeout: float, verify_ssl: bool = True) -> Any:
     """Get or create a client for the specified tool.
 
     Args:
@@ -36,6 +36,7 @@ def get_client_for_tool(name: str, base_url: str, api_key: str, timeout: float) 
         base_url: Redash instance URL
         api_key: Redash API key
         timeout: Request timeout in seconds
+        verify_ssl: Whether to verify SSL certificates
 
     Returns:
         API client instance for the tool
@@ -43,47 +44,47 @@ def get_client_for_tool(name: str, base_url: str, api_key: str, timeout: float) 
     if name not in _clients:
         match name:
             case "list_queries":
-                _clients[name] = ListQueriesClient(base_url, api_key, timeout)
+                _clients[name] = ListQueriesClient(base_url, api_key, timeout, verify_ssl)
             case "get_query":
-                _clients[name] = GetQueryClient(base_url, api_key, timeout)
+                _clients[name] = GetQueryClient(base_url, api_key, timeout, verify_ssl)
             case "create_query":
-                _clients[name] = CreateQueryClient(base_url, api_key, timeout)
+                _clients[name] = CreateQueryClient(base_url, api_key, timeout, verify_ssl)
             case "update_query":
-                _clients[name] = UpdateQueryClient(base_url, api_key, timeout)
+                _clients[name] = UpdateQueryClient(base_url, api_key, timeout, verify_ssl)
             case "archive_query":
-                _clients[name] = ArchiveQueryClient(base_url, api_key, timeout)
+                _clients[name] = ArchiveQueryClient(base_url, api_key, timeout, verify_ssl)
             case "get_query_result":
-                _clients[name] = GetQueryResultClient(base_url, api_key, timeout)
+                _clients[name] = GetQueryResultClient(base_url, api_key, timeout, verify_ssl)
             case "execute_query":
-                _clients[name] = ExecuteQueryClient(base_url, api_key, timeout)
+                _clients[name] = ExecuteQueryClient(base_url, api_key, timeout, verify_ssl)
             case "get_query_result_by_id":
-                _clients[name] = GetQueryResultByIdClient(base_url, api_key, timeout)
+                _clients[name] = GetQueryResultByIdClient(base_url, api_key, timeout, verify_ssl)
             case "get_job":
-                _clients[name] = GetJobClient(base_url, api_key, timeout)
+                _clients[name] = GetJobClient(base_url, api_key, timeout, verify_ssl)
             case "list_dashboards":
-                _clients[name] = ListDashboardsClient(base_url, api_key, timeout)
+                _clients[name] = ListDashboardsClient(base_url, api_key, timeout, verify_ssl)
             case "get_dashboard":
-                _clients[name] = GetDashboardClient(base_url, api_key, timeout)
+                _clients[name] = GetDashboardClient(base_url, api_key, timeout, verify_ssl)
             case "create_dashboard":
-                _clients[name] = CreateDashboardClient(base_url, api_key, timeout)
+                _clients[name] = CreateDashboardClient(base_url, api_key, timeout, verify_ssl)
             case "update_dashboard":
-                _clients[name] = UpdateDashboardClient(base_url, api_key, timeout)
+                _clients[name] = UpdateDashboardClient(base_url, api_key, timeout, verify_ssl)
             case "archive_dashboard":
-                _clients[name] = ArchiveDashboardClient(base_url, api_key, timeout)
+                _clients[name] = ArchiveDashboardClient(base_url, api_key, timeout, verify_ssl)
             case "list_data_sources":
-                _clients[name] = ListDataSourcesClient(base_url, api_key, timeout)
+                _clients[name] = ListDataSourcesClient(base_url, api_key, timeout, verify_ssl)
             case "get_data_source":
-                _clients[name] = GetDataSourceClient(base_url, api_key, timeout)
+                _clients[name] = GetDataSourceClient(base_url, api_key, timeout, verify_ssl)
             case "create_data_source":
-                _clients[name] = CreateDataSourceClient(base_url, api_key, timeout)
+                _clients[name] = CreateDataSourceClient(base_url, api_key, timeout, verify_ssl)
             case "update_data_source":
-                _clients[name] = UpdateDataSourceClient(base_url, api_key, timeout)
+                _clients[name] = UpdateDataSourceClient(base_url, api_key, timeout, verify_ssl)
             case "delete_data_source":
-                _clients[name] = DeleteDataSourceClient(base_url, api_key, timeout)
+                _clients[name] = DeleteDataSourceClient(base_url, api_key, timeout, verify_ssl)
             case "get_data_source_schema":
-                _clients[name] = GetDataSourceSchemaClient(base_url, api_key, timeout)
+                _clients[name] = GetDataSourceSchemaClient(base_url, api_key, timeout, verify_ssl)
             case "test_data_source":
-                _clients[name] = TestDataSourceClient(base_url, api_key, timeout)
+                _clients[name] = TestDataSourceClient(base_url, api_key, timeout, verify_ssl)
             case "list_data_source_types":
-                _clients[name] = ListDataSourceTypesClient(base_url, api_key, timeout)
+                _clients[name] = ListDataSourceTypesClient(base_url, api_key, timeout, verify_ssl)
     return _clients.get(name)

@@ -38,6 +38,7 @@ async def call_tool(name: str, arguments: dict[str, Any]) -> list[TextContent]:
         settings.url,
         settings.api_key,
         settings.timeout / 1000.0,
+        settings.verify_ssl,
     )
     if client is None:
         return [TextContent(type="text", text=f"Unknown tool: {name}")]
